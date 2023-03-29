@@ -8,18 +8,16 @@ class MyComponent extends React.Component {
     age: "26",
   };
   
-  handleClick = () => {
-    console.log("Click to help",this.state.age);
-
+  handleChange = (event) => {
+   
     this.setState({
-      name: "Ericcc ",
-      age: Math.floor((Math.random()*100)+1),
-    });
-
+      name: event.target.value
+    })
   };
-
-  handleOver = (e) => {
-    console.log(e.pageX);
+  
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(this.state)
   };
 
   render() {
@@ -28,8 +26,12 @@ class MyComponent extends React.Component {
         My name is:
         {this.state.name} and i'm from {this.state.channel}
         i'm {this.state.age}
-        <button onClick={this.handleClick}>Click me</button>
-        <button onMouseOver={this.handleOver}>Hover me</button>
+        
+        <form onSubmit={this.handleSubmit}>
+          <input type="text" onChange={this.handleChange}/>
+          <button>Submit</button>
+        </form>
+       
       </div>
     );
   }
