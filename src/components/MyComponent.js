@@ -7,9 +7,15 @@ class MyComponent extends React.Component {
     channel: "Hoi dan IT",
     age: "26",
   };
-
+  
   handleClick = () => {
-    console.log("Click to help");
+    console.log("Click to help",this.state.age);
+
+    this.setState({
+      name: "Ericcc ",
+      age: Math.floor((Math.random()*100)+1),
+    });
+
   };
 
   handleOver = (e) => {
@@ -20,9 +26,8 @@ class MyComponent extends React.Component {
     return (
       <div>
         My name is:
-        {this.state.name}
-        and i'm from
-        {this.state.channel}
+        {this.state.name} and i'm from {this.state.channel}
+        i'm {this.state.age}
         <button onClick={this.handleClick}>Click me</button>
         <button onMouseOver={this.handleOver}>Hover me</button>
       </div>
