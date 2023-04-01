@@ -6,9 +6,9 @@ import UserInfor from "./UserInfor";
 class MyComponent extends React.Component {
   state = {
     listUsers: [
-      {id:1, name: 'John', age: 21},
+      {id:1, name: 'John', age: 26},
       {id:2, name: 'Cenna', age: 30},
-      {id:3, name: 'Wick', age: 53},
+      {id:3, name: 'Wick', age: 13},
     ],
   };
   render() {
@@ -19,6 +19,7 @@ class MyComponent extends React.Component {
         <br />
         <hr />
         <DisplayInfor listUsers={this.state.listUsers}/>
+        
       </div>
     );
   }
