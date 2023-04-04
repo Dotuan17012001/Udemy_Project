@@ -9,6 +9,9 @@ class DisplayInfor extends React.Component {
   handleShowHide = () => {
     this.setState({ isShowListUser: !this.state.isShowListUser });
   };
+  // handleDeleteUserq = (user) => {
+  //       this.props.handleDeleteUser(user.id);
+  // };
   render() {
     const { listUsers } = this.props;
     return (
@@ -23,17 +26,18 @@ class DisplayInfor extends React.Component {
         </div>
 
         {this.state.isShowListUser && (
-          <div>
+          <>
             {listUsers.map((user) => {
               return (
                 <ul key={user.id} className={+user.age > 26 ? "red" : "green"}>
                   <li style={{color:'blue',paddingTop:'20px'}}>Toi ten la {user.name}</li>
                   <li>Tuoi cua toi la {user.age}</li>
+                  <button onClick={()=>{this.props.handleDeleteUser(user.id)}}>Delete</button>
                   <hr />
                 </ul>
               );
             })}
-          </div>
+          </>
         )}
       </div>
     );

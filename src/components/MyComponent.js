@@ -6,30 +6,45 @@ import AddUserInfor from "./AddUserInfor";
 class MyComponent extends React.Component {
   state = {
     listUsers: [
-      {id:1, name: 'John', age: 26},
-      {id:2, name: 'Cenna', age: 30},
-      {id:3, name: 'Wick', age: 13},
-      {id:4, name: 'Khoa', age: 107}
+      { id: 1, name: "John", age: 26 },
+      { id: 2, name: "Cenna", age: 30 },
+      { id: 3, name: "Wick", age: 13 },
+      { id: 4, name: "Khoa", age: 107 },
     ],
   };
 
   handleAddnewUser = (userObject) => {
-       console.log(userObject);
+    console.log(userObject);
+    this.setState({
+      listUsers: [userObject, ...this.state.listUsers],
+    });
+  };
+
+  handleDeleteUser = (userId) => {
+       let listUsersClone = [...this.state.listUsers];
+       listUsersClone = listUsersClone.filter(item => item.id !== userId)
        this.setState({
-        listUsers: [userObject,...this.state.listUsers]
-       }); 
+           listUsers: listUsersClone
+       });
   };
 
   render() {
-    const myInfor = ['Hello', 'world','LOLOGY']
+   
     return (
-      <div>
-        <AddUserInfor handleAddnewUser = {this.handleAddnewUser}/>
-        <br />
-        <hr />
-        <DisplayInfor listUsers={this.state.listUsers}/>
-        
-      </div>
+
+      <>
+        <div className="a">
+          <AddUserInfor handleAddnewUser={this.handleAddnewUser} />
+          <br />
+          <hr />
+          <DisplayInfor 
+                listUsers={this.state.listUsers} 
+                handleDeleteUser={this.handleDeleteUser}/>
+        </div>
+        <div className="b">
+
+        </div>
+      </>
     );
   }
 }
