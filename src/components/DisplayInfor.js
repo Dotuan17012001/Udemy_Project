@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import './DisplayInfor.scss';
 import logo from '../logo.svg';
+
 
 //stateless vs statefull
 // class DisplayInfor extends React.Component {
@@ -33,11 +34,20 @@ import logo from '../logo.svg';
 
 const DisplayInfor = (props) =>{
     const { listUsers } = props;
+    const [isShowHide, setIsShowHide] = useState(true);
+   
+    const handleShowHide = () =>{
+        setIsShowHide(!isShowHide);
+    }
+
     return (
       <div className="display-infor-container">
         <img src={logo}/>
-        
-        {true && (
+        <div>
+          <span onClick={()=>handleShowHide()} style={{cursor:'pointer'}}>Show List User</span>
+        </div>
+
+        {isShowHide && (
           <>
             {listUsers.map((user) => {
               return (
