@@ -55,46 +55,45 @@ import { useState } from "react";
 // }
 const AddUserInfor = (props) => {
 
-  const [infor, setInfor] = useState({ name: "", channel: "Hoi dan IT88", age: "" });
+  // const [name, setName] = useState({ name: "", channel: "Hoi dan IT88", age: "" });
+  const [name, setName] = useState('');
+  const [age, setAge] = useState('');
+  const [channel, setChannel] = useState('Hoi dan IT88');
 
   const handleChangeName = (event) => {
-    setInfor({
-      name: event.target.value
-    })
+    setName(event.target.value)
   };
 
   const handleChangeAge = (event) => {
-    setInfor({
-      age: event.target.value
-    })
+    setAge(event.target.value)
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     props.handleAddnewUser({
       id: Math.floor(Math.random() * 100 + 1) + "-random",
-      name: infor.name,
-      age: infor.age,
+      name: name,
+      age: age,
     });
   };
 
   return (
     <div>
       My name is:
-      {infor.name} and i'm from {infor.channel}
-      i'm {infor.age}
+      {name} and i'm from {channel}
+      i'm {age}
       <form onSubmit={(event)=>handleSubmit(event)}>
         <label>Your name</label>
         <input
           type="text"
-          value={infor.name}
+          value={name}
           onChange={(event)=>handleChangeName(event)}
         />
 
         <label>Your age</label>
         <input
           type="text"
-          value={infor.age}
+          value={age}
           onChange={(event)=>handleChangeAge(event)}
         />
         <button>Submit</button>
