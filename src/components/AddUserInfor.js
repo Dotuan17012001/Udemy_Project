@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 // class AddUserInfor extends React.Component {
 //     state = {
@@ -55,7 +55,7 @@ import { useState } from "react";
 // }
 const AddUserInfor = (props) => {
 
-  // const [name, setName] = useState({ name: "", channel: "Hoi dan IT88", age: "" });
+  // const [infor, setInfor] = useState({ name: "", channel: "Hoi dan IT88", age: "" });
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [channel, setChannel] = useState('Hoi dan IT88');
