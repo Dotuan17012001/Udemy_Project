@@ -6,23 +6,23 @@ import { useState } from "react";
 //         channel: "Hoi dan IT",
 //         age: "",
 //       };
-    
+
 //       handleChange = (event) => {
 //         this.setState({
 //           name: event.target.value,
 //         });
 //       };
-    
+
 //       handleChangeAge = (event) => {
 //         this.setState({
 //           age: event.target.value,
 //         });
 //       };
-    
+
 //       handleSubmit = (event) => {
 //         event.preventDefault();
 //         this.props.handleAddnewUser({
-//               id: Math.floor((Math.random() *100 ) +1)  + '-random', 
+//               id: Math.floor((Math.random() *100 ) +1)  + '-random',
 //               name: this.state.name,
 //               age: this.state.age
 //       });
@@ -54,18 +54,17 @@ import { useState } from "react";
 //   }
 // }
 const AddUserInfor = (props) => {
-
   // const [infor, setInfor] = useState({ name: "", channel: "Hoi dan IT88", age: "" });
-  const [name, setName] = useState('');
-  const [age, setAge] = useState('');
-  const [channel, setChannel] = useState('Hoi dan IT88');
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [channel, setChannel] = useState("Hoi dan IT88");
 
   const handleChangeName = (event) => {
-    setName(event.target.value)
+    setName(event.target.value);
   };
 
   const handleChangeAge = (event) => {
-    setAge(event.target.value)
+    setAge(event.target.value);
   };
 
   const handleSubmit = (event) => {
@@ -82,19 +81,19 @@ const AddUserInfor = (props) => {
       My name is:
       {name} and i'm from {channel}
       i'm {age}
-      <form onSubmit={(event)=>handleSubmit(event)}>
+      <form onSubmit={(event) => handleSubmit(event)}>
         <label>Your name</label>
         <input
           type="text"
           value={name}
-          onChange={(event)=>handleChangeName(event)}
+          onChange={(event) => handleChangeName(event)}
         />
 
         <label>Your age</label>
         <input
           type="text"
           value={age}
-          onChange={(event)=>handleChangeAge(event)}
+          onChange={(event) => handleChangeAge(event)}
         />
         <button>Submit</button>
       </form>
