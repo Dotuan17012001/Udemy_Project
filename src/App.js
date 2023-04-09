@@ -10,7 +10,9 @@ const App = () => {
         <Header />
       </div>
       <div className="main-container">
-        <div className="sidenav-container"></div>
+        <div className="sidenav-container">
+          
+        </div>
       </div>
       <div className="app-content">
         <Outlet />
