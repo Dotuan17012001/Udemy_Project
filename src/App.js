@@ -1,13 +1,13 @@
 import "./App.scss";
 import React from "react";
-import Header from "./components/Header/Header";
 import { Outlet, Link } from "react-router-dom";
+import Header from "./components/Header/Header";
 
 const App = () => {
   return (
     <div className="app-container">
       <div className="header-container">
-        <Header />
+        <Header/>
       </div>
       <div className="main-container">
         <div className="sidenav-container">
