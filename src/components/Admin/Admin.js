@@ -11,7 +11,7 @@ const Admin = (props) =>{
             </div>
             <div className="admin-content">
                 <FaBars onClick={()=>{setCollapsed(!collapsed)}}/>
-                ABCDEFGWJKLMPOR
+                Conten go here
             </div>
         </div>
     )
